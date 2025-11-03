@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>SISTEMA DE CENTROS EDUCATIVOS</title>
+    <title>SACE - MINEDU</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta content="Sistema Integrado de Gestión Institucional" name="description" />
     <meta content="AnibalYucraC" name="author" />

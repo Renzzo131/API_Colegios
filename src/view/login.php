@@ -232,7 +232,7 @@
   <div class="header-bar">
     <img src="<?php echo BASE_URL ?>src/view/include/logo.png" alt="Logo IES">
     <div class="header-titles">
-      <h3>SISTEMA DE ADMINISTRACIÓN DE COLEGIOS DEL PERÚ</h3>
+      <h3>SISTEMA DE ADMINISTRACIÓN DE CENTROS EDUCATIVOS - SACE</h3>
     </div>
   </div>
 
