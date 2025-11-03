@@ -27,54 +27,8 @@
     <link href="<?php echo BASE_URL ?>src/view/pp/assets/css/theme.min.css" rel="stylesheet" type="text/css" />
     <link href="<?php echo BASE_URL ?>src/view/include/styles.css" rel="stylesheet" type="text/css" />
     <style>
-        .btn-primary {
-            background: linear-gradient(135deg, #49538C, #5a6394);
-            border: none;
-            color: white;
-            padding: 12px 24px;
-            font-size: 14px;
-            font-weight: 500;
-            border-radius: 6px;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            text-transform: none;
-            letter-spacing: 0.3px;
-            box-shadow: 
-                0 2px 8px rgba(73, 83, 140, 0.25),
-                0 1px 3px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-            transition: left 0.8s ease;
-        }
-
-        .btn-primary:hover {
-            background: linear-gradient(135deg, #88d3ce, #9bddd9);
-            transform: translateY(-1px);
-            box-shadow: 
-                0 4px 16px rgba(136, 211, 206, 0.3),
-                0 2px 8px rgba(0, 0, 0, 0.15);
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:active {
-            transform: translateY(0);
-        }
-
-        .btn-info {
-    background: linear-gradient(135deg, #2c8c85, #3ca79f);
+.btn-primary {
+    background: linear-gradient(135deg, #D91F5A, #E94A7A);
     border: none;
     color: white;
     padding: 12px 24px;
@@ -88,7 +42,53 @@
     text-transform: none;
     letter-spacing: 0.3px;
     box-shadow: 
-        0 2px 8px rgba(44, 140, 133, 0.25),
+        0 2px 8px rgba(217, 31, 90, 0.25),
+        0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+    transition: left 0.8s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #B91849, #D91F5A);
+    transform: translateY(-1px);
+    box-shadow: 
+        0 4px 16px rgba(217, 31, 90, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #E94A7A, #F57AAC);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: none;
+    letter-spacing: 0.3px;
+    box-shadow: 
+        0 2px 8px rgba(233, 74, 122, 0.25),
         0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
@@ -104,10 +104,10 @@
 }
 
 .btn-info:hover {
-    background: linear-gradient(135deg, #70e1c8, #91f2dc);
+    background: linear-gradient(135deg, #F57AAC, #F8A3C8);
     transform: translateY(-1px);
     box-shadow: 
-        0 4px 16px rgba(112, 225, 200, 0.3),
+        0 4px 16px rgba(233, 74, 122, 0.3),
         0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
@@ -214,7 +214,7 @@
 .btn-light {
     background: linear-gradient(135deg, #f7f7f7, #e9e9e9);
     border: none;
-    color: #333;
+    color: #384759;
     padding: 12px 24px;
     font-size: 14px;
     font-weight: 500;
@@ -247,7 +247,7 @@
     box-shadow: 
         0 4px 16px rgba(200, 200, 200, 0.25),
         0 2px 8px rgba(0, 0, 0, 0.1);
-    color: #111;
+    color: #384759;
 }
 
 .btn-light:hover::before {
