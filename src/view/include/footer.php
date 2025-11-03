@@ -7,12 +7,12 @@
              <div class="row">
                  <div class="col-md-6">
                      <div class="text-center text-lg-left">
-                         2025 © SIGI.
+                         2025 © SACE.
                      </div>
                  </div>
                  <div class="col-md-6">
                      <div class="text-right d-none d-lg-block">
-                         Desarrollado por GRUPO TINYH PERU S.A.C.
+                         Desarrollado por IESP HUANTA REGS
                      </div>
                  </div>
              </div>
