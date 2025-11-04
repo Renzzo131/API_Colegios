@@ -68,7 +68,7 @@ if ($tipo == "registrarToken") {
                     $fecha_registro = date("Ymd");
                     $token_final = $token_generado . "-" . $fecha_registro . "-" . $cliente;
 
-                    $id_token = $objApi->registrarToken($cliente, $token_final,1);
+                    $id_token = $objApi->registrarToken($cliente, $token_final, 1);
                     if ($id_token > 0) {
                         $arr_Respuesta = array('status' => true, 'mensaje' => 'Token Generado Correctamente', 'token' => $token_generado);
                     } else {
@@ -165,15 +165,16 @@ if ($tipo == "actualizar") {
             } else {
                 $arr_Cliente = $objApi->buscarClienteByRuc($ruc);
                 if ($arr_Cliente) {
-                    if ($arr_Cliente->id == $id) {
+                    $arr_Cliente = $objApi->buscarClienteByRuc($ruc);
+                    if ($arr_Cliente && $arr_Cliente->id != $id) {
+                        $arr_Respuesta = array('status' => false, 'mensaje' => 'ruc ya esta registrado');
+                    } else {
                         $consulta = $objApi->actualizarCliente($id, $ruc, $razon_social, $correo, $telefono, $estado);
                         if ($consulta) {
                             $arr_Respuesta = array('status' => true, 'mensaje' => 'Actualizado Correctamente');
                         } else {
                             $arr_Respuesta = array('status' => false, 'mensaje' => 'Error al actualizar registro');
                         }
-                    } else {
-                        $arr_Respuesta = array('status' => false, 'mensaje' => 'ruc ya esta registrado');
                     }
                 } else {
                     $consulta = $objApi->actualizarCliente($id, $ruc, $razon_social, $correo, $telefono, $estado);
