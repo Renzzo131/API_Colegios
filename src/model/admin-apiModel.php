@@ -142,4 +142,14 @@ class ApiModel
         }
         return $arrRespuesta;
     }
+
+    public function obtenerTokenPorCliente($id_cliente)
+{
+    $sql = $this->conexion->query("SELECT token FROM tokens WHERE id_cliente = '$id_cliente' AND estado = 1 ORDER BY fecha_registro DESC LIMIT 1");
+    if ($sql && $row = $sql->fetch_assoc()) {
+        return $row['token'];
+    }
+    return null;
+}
+
 }
