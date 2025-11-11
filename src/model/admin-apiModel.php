@@ -142,4 +142,13 @@ class ApiModel
         }
         return $arrRespuesta;
     }
+
+    public function buscarTokenActivo($token)
+    {
+        $sql = $this->conexion->query("SELECT * FROM tokens WHERE token='$token' AND estado=1");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+
+
 }
