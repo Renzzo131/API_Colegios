@@ -252,3 +252,21 @@ if ($tipo == "listar_tokens_ordenados_tabla") {
     }
     echo json_encode($arr_Respuesta);
 }
+
+if ($tipo == "obtener_token") {
+    $arr_Respuesta = array('status' => false, 'msg' => 'Token no encontrado');
+
+    // Verificamos que se haya enviado el id
+    if (isset($_GET['id'])) {
+        $id_cliente = $_GET['id'];
+
+        // Llamamos al modelo
+        $token = $objApi->obtenerTokenPorCliente($id_cliente);
+
+        if ($token) {
+            $arr_Respuesta = array('status' => true, 'token' => $token);
+        }
+    }
+
+    echo json_encode($arr_Respuesta);
+}
