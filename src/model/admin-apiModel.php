@@ -102,7 +102,7 @@ class ApiModel
         }
         if ($busqueda_tabla_estado != '' && $condicion != '') {
             $condicion .= " AND estado = '$busqueda_tabla_estado'";
-        }else{
+        } else {
             $condicion .= " estado = '$busqueda_tabla_estado'";
         }
         $arrRespuesta = array();
@@ -121,7 +121,7 @@ class ApiModel
         }
         if ($busqueda_tabla_estado != '' && $condicion != '') {
             $condicion .= " AND estado = '$busqueda_tabla_estado'";
-        }else{
+        } else {
             $condicion .= " estado = '$busqueda_tabla_estado'";
         }
         $iniciar = ($pagina - 1) * $cantidad_mostrar;
@@ -133,7 +133,7 @@ class ApiModel
         return $arrRespuesta;
     }
 
-        public function buscarColegioByDistrito($data)
+    public function buscarColegioByDistrito($data)
     {
         $arrRespuesta = array();
         $sql = $this->conexion->query("SELECT * FROM centros_educativos WHERE distrito LIKE '%$data%'");
@@ -141,5 +141,21 @@ class ApiModel
             array_push($arrRespuesta, $objeto);
         }
         return $arrRespuesta;
+    }
+
+    public function buscarTokenActivo($token)
+    {
+        $sql = $this->conexion->query("SELECT * FROM tokens WHERE token='$token' AND estado=1");
+        $sql = $sql->fetch_object();
+        return $sql;
+    }
+
+    public function obtenerTokenPorCliente($id)
+    {
+        $sql = $this->conexion->query("SELECT token FROM tokens WHERE id_cliente = '$id' AND estado = 1 ORDER BY fecha_registro DESC LIMIT 1");
+        if ($sql && $row = $sql->fetch_assoc()) {
+            return $row['token'];
+        }
+        return null;
     }
 }
