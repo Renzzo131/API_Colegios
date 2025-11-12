@@ -158,4 +158,15 @@ class ApiModel
         }
         return null;
     }
+
+
+    public function verificarTokenActivoPorCliente($token, $id_cliente)
+{
+    $sql = $this->conexion->query("SELECT * FROM tokens WHERE token = '$token' AND id_cliente = '$id_cliente' AND estado = 1 LIMIT 1");
+    if ($sql && $sql->num_rows > 0) {
+        return $sql->fetch_object();
+    }
+    return null;
+}
+
 }
